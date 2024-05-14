@@ -1,11 +1,7 @@
 {
-  "name": "workshop-node-ts-intro",
+  "name": "to-do-backend",
   "version": "1.0.0",
-  "description": "api rest",
   "main": "index.js",
-  "repository": "https://github.com/felipez3r0/workshop-node-ts-intro.git",
-  "author": "Felipe do E. Santo <felipez3r0@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
