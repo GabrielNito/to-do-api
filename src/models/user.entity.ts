@@ -8,6 +8,7 @@ import {
 } from "typeorm";
 import Token from "./token.entity";
 import Task from "./task.entity";
+import Contact from "./contact.entity";
 
 @Entity()
 @Unique(["email"])
@@ -29,4 +30,7 @@ export default class User extends BaseEntity {
 
   @OneToMany(() => Task, (task) => task.user)
   tasks!: Task[];
+
+  @OneToMany(() => Contact, (contact) => contact.user)
+  contacts!: Contact[];
 }

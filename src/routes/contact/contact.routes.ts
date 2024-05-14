@@ -1,12 +1,13 @@
 import { Router } from "express";
-import TaskController from "../../controllers/task/task.controller";
+import ContactController from "../../controllers/contact/contact.controller";
+import authMiddleware from "../../middlewares/auth.middleware";
 
 const contactsRoutes = Router();
 
-contactsRoutes.post("/", TaskController.store);
-contactsRoutes.get("/", TaskController.index);
-contactsRoutes.get("/:id", TaskController.show);
-contactsRoutes.delete("/:id", TaskController.delete);
-contactsRoutes.put("/:id", TaskController.update);
+contactsRoutes.post("/", authMiddleware, ContactController.store);
+contactsRoutes.get("/", authMiddleware, ContactController.index);
+contactsRoutes.get("/:id", authMiddleware, ContactController.show);
+contactsRoutes.delete("/:id", authMiddleware, ContactController.delete);
+contactsRoutes.put("/:id", authMiddleware, ContactController.update);
 
 export default contactsRoutes;

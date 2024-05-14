@@ -15,15 +15,15 @@ export default class Contact extends BaseEntity {
   @Column()
   name!: string;
 
-  @Column({ default: "" })
-  email?: string;
+  @Column({ default: "-" })
+  email!: string;
 
-  @Column()
-  phone?: string;
+  @Column({ default: "-" })
+  phone!: string;
 
   @Column({ name: "user_id" })
   userId!: number;
 
-  @ManyToOne(() => User, (user: any) => user.tasks)
+  @ManyToOne(() => User, (user) => user.contacts)
   user!: User;
 }
